@@ -11,10 +11,8 @@
         <h1>Fractal Generator</h1>
         <h3>Generate fractals with different shapes and recursion depths.</h3>
     </header>
-    
-    <main>
-        <h3>Input</h3>
-        
+
+    <main>        
         <section id="method-selection-section">
             <label for="method-select">Method: </label>
             <select id="method-select">
@@ -25,15 +23,20 @@
         </section>
 
         <section id="additive-method-section" class="method-select-target">
-            <label for="additive-struture-canvas">Base structure:</label>
-            <canvas id="additive-struture-canvas"></canvas>
+            <canvas id="additive-input-canvas" width="200rem" height="200rem"></canvas>
+
+            <label for="additive-angle">Turning angle:</label>
+            <input type="number" id="additive-angle" min="1" max="359" value="90">
+
+            <label for="additive-angle">Scaling factor:</label>
+            <input type="number" id="additive-scale" min="1" max="3" value="1.1" step=".1">
+
+            <button id="additive-reset" onclick="resetInputCanvas()">Reset Canvas</button>
 
             <section>
-                <section>
-                    <label for="depth">Recursion Depth:</label>
-                    <input type="number" id="depth" min="2" max="20" value="8">
-                    <button class="generate-button" onclick="generate_additive()">Generate</button>
-                </section>
+                <label for="depth">Recursion Depth:</label>
+                <input type="number" id="additive-depth" min="2" max="20" value="8">
+                <button class="generate-button" onclick="setOutputCanvasVisibiility('on'); generate_additive();">Generate</button>
             </section>
         </section>
 
@@ -49,7 +52,7 @@
                 <section>
                     <label for="depth">Recursion Depth:</label>
                     <input type="number" id="depth" min="1" max="9" value="5">
-                    <button class="generate-button" onclick="generate_reductive()">Generate</button>
+                    <button class="generate-button" onclick="setOutputCanvasVisibiility('on'); generate_reductive()">Generate</button>
                 </section>
             </section>
         </section>
@@ -62,13 +65,14 @@
                 <section>
                     <label for="grid-side-length-input">Grid side length:</label>
                     <input type="number" id="grid-side-length-input" min="100" max="2000" value="500">
-                    <button class="generate-button" onclick="generate_formulaic()">Generate</button>
+                    <button class="generate-button" onclick="setOutputCanvasVisibiility('on'); generate_formulaic()">Generate</button>
                 </section>
             </section>
         </section>
 
         <canvas id="output-canvas" class="hidden-general"></canvas>
     </main>
-    <script src="script.js"></script>
+    <script src="js/additive.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

@@ -1,6 +1,8 @@
 /*
     Different processes needed to be handled:
     - Additive = Start with structure and add to it
+        - Define center and new center, draw whatever in between
+        - Give scaling factor and angle
     - Reductive = Take base shape and subdivide in certain way
     - Formulaic = In a euclidian grid using algebra
 */
@@ -29,18 +31,3 @@ method_select.addEventListener("change", function() {
         }
     }
 })
-
-function generate_additive() {
-    setOutputCanvasVisibiility("on")
-    console.log("[INFO]: Generating fractal with method: Additive.")
-}
-
-function generate_reductive() {
-    setOutputCanvasVisibiility("on")
-    console.log("[INFO]: Generating fractal with method: Reductive.")
-}
-
-function generate_formulaic() {
-    setOutputCanvasVisibiility("on")
-    console.log("[INFO]: Generating fractal with method: Formulaic.")
-}

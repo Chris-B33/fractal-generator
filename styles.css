@@ -66,3 +66,9 @@ button:hover {
     height: 70vh;
     border: 0.1rem black solid;
 }
+
+#additive-reset {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+    border-radius: 0.8rem;
+}
