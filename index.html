@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Web Layout</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Fractal Generator</h1>
+        <h3>Generate fractals with different shapes and recursion depths.</h3>
+    </header>
+    <main>
+        <h3>Input</h3>
+        
+
+        <section id="method-selection-section">
+            <label for="method-select">Method: </label>
+            <select id="method-select">
+                <option value="additive">Additive</option>
+                <option value="reductive">Reductive</option>
+                <option value="formulaic">Formulaic</option>
+            </select>
+        </section>
+
+        <section id="additive-method-section" class="method-select-target">
+            <label for="additive-struture-canvas">Base structure:</label>
+            <canvas id="additive-struture-canvas"></canvas>
+
+            <section>
+                <section>
+                    <label for="depth">Recursion Depth:</label>
+                    <input type="number" id="depth" min="2" max="20" value="8">
+                    <button class="generate-button" onclick="generate_additive()">Generate</button>
+                </section>
+            </section>
+        </section>
+
+        <section id="reductive-method-section" class="method-select-target hidden">
+            <label for="shape">Base Shape:</label>
+            <select id="shape">
+                <option value="line">Line</option>
+                <option value="triangle">Triangle</option>
+                <option value="square">Square</option>
+            </select>
+
+            <section>
+                <section>
+                    <label for="depth">Recursion Depth:</label>
+                    <input type="number" id="depth" min="1" max="9" value="5">
+                    <button class="generate-button" onclick="generate_reductive()">Generate</button>
+                </section>
+            </section>
+        </section>
+
+        <section id="formulaic-method-section" class="method-select-target hidden">
+            <label for="shape">Formula: </label>
+            <input id="formulaic-input">
+
+            <section>
+                <section>
+                    <label for="grid-side-length-input">Grid side length:</label>
+                    <input type="number" id="grid-side-length-input" min="100" max="2000" value="500">
+                    <button class="generate-button" onclick="generate_formulaic()">Generate</button>
+                </section>
+            </section>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
