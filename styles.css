@@ -1,12 +1,19 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    text-align: center;
+* {
+    padding: 0.1rem;
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', sans-serif;
+    transition: all 0.3s ease-in-out;
+    opacity: 1;
 }
 
-header, nav, main, footer {
-    padding: 0.2rem;
+body {
+    background: #f9f9f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 nav ul {
@@ -23,20 +30,39 @@ section {
     padding: 0.3rem;
 }
 
-button {
-    padding: 10px;
-    background: blue;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
 canvas {
     border: 0.2rem solid black;
     display: block;
     margin: auto;
 }
 
-.hidden {
+button {
+    margin-top: 1rem;
+    background: black;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #333;
+}
+
+.hidden-method {
     display: none;
+}
+
+.hidden-general {
+    opacity: 0;
+}
+
+#output-canvas {
+    margin-top: 1rem;
+    width: 70vh;
+    height: 70vh;
+    border: 0.1rem black solid;
 }

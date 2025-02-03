@@ -11,10 +11,10 @@
         <h1>Fractal Generator</h1>
         <h3>Generate fractals with different shapes and recursion depths.</h3>
     </header>
+    
     <main>
         <h3>Input</h3>
         
-
         <section id="method-selection-section">
             <label for="method-select">Method: </label>
             <select id="method-select">
@@ -37,7 +37,7 @@
             </section>
         </section>
 
-        <section id="reductive-method-section" class="method-select-target hidden">
+        <section id="reductive-method-section" class="method-select-target hidden-method">
             <label for="shape">Base Shape:</label>
             <select id="shape">
                 <option value="line">Line</option>
@@ -54,7 +54,7 @@
             </section>
         </section>
 
-        <section id="formulaic-method-section" class="method-select-target hidden">
+        <section id="formulaic-method-section" class="method-select-target hidden-method">
             <label for="shape">Formula: </label>
             <input id="formulaic-input">
 
@@ -66,6 +66,8 @@
                 </section>
             </section>
         </section>
+
+        <canvas id="output-canvas" class="hidden-general"></canvas>
     </main>
     <script src="script.js"></script>
 </body>
