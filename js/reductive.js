@@ -4,6 +4,8 @@ var reductive_recursion_input = document.getElementById("reductive-depth");
 var output_canvas = document.getElementById("output-canvas");
 var output_ctx = output_canvas.getContext("2d")
 
+var max_delay = 100
+
 const delay = (delayInms) => {
     return new Promise(resolve => setTimeout(resolve, delayInms));
 };
@@ -32,7 +34,7 @@ function sierpinskis_triangle() {
         ctx.fill();
     }
 
-    function sierpinski_t(ctx, x1, y1, x2, y2, x3, y3, depth) {
+    async function sierpinski_t(ctx, x1, y1, x2, y2, x3, y3, depth) {
         if (depth == 0) {
             drawTriangle(ctx, x1, y1, x2, y2, x3, y3);
         } else {
@@ -44,8 +46,11 @@ function sierpinskis_triangle() {
             const midY31 = (y3 + y1) / 2;
 
             sierpinski_t(ctx, x1, y1, midX12, midY12, midX31, midY31, depth - 1);
+            await delay(max_delay - (10 * reductive_recursion_input.value));
             sierpinski_t(ctx, midX12, midY12, x2, y2, midX23, midY23, depth - 1);
+            await delay(max_delay - reductive_recursion_input.value);
             sierpinski_t(ctx, midX31, midY31, midX23, midY23, x3, y3, depth - 1);
+            await delay(max_delay - reductive_recursion_input.value);
         }
     }
 
@@ -68,13 +73,14 @@ function sierpinskis_carpet() {
         ctx.fillRect(x, y, size, size);
     }
 
-    function sierpinskiCarpet(ctx, x, y, size, depth) {
+    async function sierpinskiCarpet(ctx, x, y, size, depth) {
         if (depth == 0) {
             drawSquare(ctx, x, y, size);
         } else {
             const newSize = size / 3;
             for (let i = 0; i < 3; i++) {
                 for (let j = 0; j < 3; j++) {
+                    await delay(max_delay - (20 * reductive_recursion_input.value));
                     if (i !== 1 || j !== 1) {
                         sierpinskiCarpet(ctx, x + i * newSize, y + j * newSize, newSize, depth - 1);
                     }

@@ -1,9 +1,8 @@
 var method_select = document.getElementById("method-select");
 var output_canvas = document.getElementById("output-canvas");
-var method_name = "";
 
-output_canvas.width = window.innerWidth * 0.45;
-output_canvas.height = window.innerWidth * 0.45;
+output_canvas.width = window.innerWidth * 0.4;
+output_canvas.height = window.innerWidth * 0.4;
 
 function setOutputCanvasVisibiility(state) {
     if (state == "on") {
@@ -14,7 +13,7 @@ function setOutputCanvasVisibiility(state) {
 }
 
 method_select.addEventListener("change", function() {
-    method_name = this.options[this.selectedIndex].getAttribute("value");
+    let method_name = this.options[this.selectedIndex].getAttribute("value");
     setOutputCanvasVisibiility("off")
 
     for (var target of document.getElementsByClassName("method-select-target")) {

@@ -37,7 +37,7 @@ canvas {
 }
 
 button {
-    margin-top: 1rem;
+    margin-top: 0.2rem;
     background: black;
     color: white;
     border: none;
@@ -63,7 +63,7 @@ button:hover {
 #output-canvas {
     margin-top: 1rem;
     border: 0.1rem black solid;
-    height: 70%;
+    width: 70%;
 }
 
 #additive-reset {
