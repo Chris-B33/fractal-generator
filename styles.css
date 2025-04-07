@@ -62,7 +62,12 @@ button:hover {
 
 #output-canvas {
     margin-top: 1rem;
-    width: 70vh;
-    height: 70vh;
     border: 0.1rem black solid;
+    height: 70%;
+}
+
+#additive-reset {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+    border-radius: 0.8rem;
 }
