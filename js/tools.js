@@ -1,15 +1,9 @@
-/*
-    Different processes needed to be handled:
-    - Additive = Start with structure and add to it
-        - Define center and new center, draw whatever in between
-        - Give scaling factor and angle
-    - Reductive = Take base shape and subdivide in certain way
-    - Formulaic = In a euclidian grid using algebra
-*/
-
 var method_select = document.getElementById("method-select");
 var output_canvas = document.getElementById("output-canvas");
 var method_name = "";
+
+output_canvas.width = window.innerWidth * 0.45;
+output_canvas.height = window.innerWidth * 0.45;
 
 function setOutputCanvasVisibiility(state) {
     if (state == "on") {

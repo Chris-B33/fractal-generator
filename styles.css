@@ -62,9 +62,8 @@ button:hover {
 
 #output-canvas {
     margin-top: 1rem;
-    width: 70vh;
-    height: 70vh;
     border: 0.1rem black solid;
+    height: 70%;
 }
 
 #additive-reset {
