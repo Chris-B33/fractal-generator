@@ -9,15 +9,17 @@ const delay = (delayInms) => {
 };
 
 function generate_reductive() {
-    console.log("[INFO]: Generating fractal with method: Reductive.")
+    console.log("[START]: Generating reductive fractal with values:")
+    console.log(`[INFO]: - Recurson depth: ${reductive_recursion_input.value}`);
     let method = reductive_method_select.options[reductive_method_select.selectedIndex].getAttribute("value")
     if (method == "triangle") {
-        console.log("[INFO]: Shape = Sierpinski's Triangle")
+        console.log("[INFO]: - Shape: Sierpinski's Triangle")
         sierpinskis_triangle();
     } else if (method == "square") {
-        console.log("[INFO]: Shape = Sierpinski's Carpet")
+        console.log("[INFO]: - Shape: Sierpinski's Carpet")
         sierpinskis_carpet();
     }
+    console.log("[FINISH]: Completed fractal.");
 }
 
 function sierpinskis_triangle() {
@@ -87,6 +89,5 @@ function sierpinskis_carpet() {
     output_ctx.fillStyle = 'black';
 
     output_ctx.clearRect(0, 0, output_canvas.width, output_canvas.height);
-    console.log(size)
     sierpinskiCarpet(output_ctx, 0, 0, size, depth);
 }

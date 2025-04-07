@@ -136,11 +136,8 @@ function generate_additive() {
 
     current_scale = 1
     for (let i=0; i<depth; i++) {
-        console.log(`[INFO]: Starting iteration ${i+1}`)
         output_ctx.fillStyle = "red"
         output_ctx.fillRect(current_center.x, current_center.y, 4, 4)
-        console.log(`${output_pixels[0].x} ${output_pixels[0].y}`)
-        console.log(`${current_center.x} ${current_center.y}`)
         for (let i=0; i<output_pixels.length; i++) {
             output_pixels[i].ctx = output_ctx;
             output_pixels[i].x = (output_pixels[i].x + current_center.x - centers[0].x);
